@@ -10,17 +10,16 @@
  * Strings have 3 common characters - 2 "a"s and 1 "c".
  */
 function getCommonCharacterCount(s1, s2) {
-  const arr1 = s1.split('');
-  const arr2 = s2.split('');
-  let count = 0;
-
-  arr1.forEach((e) => {
-    if (arr2.includes(e) === true) {
-      count += 1;
-      arr2.splice(arr2.indexOf[e], 1);
+  const s1Array = s1.split('');
+  const s2Array = s2.split('');
+  let result = 0;
+  s1Array.forEach((elem) => {
+    if (s2Array.includes(elem)) {
+      result++;
+      s2Array[s2Array.indexOf(elem)] = '';
     }
   });
-  return count;
+  return result;
 }
 
 module.exports = getCommonCharacterCount;
